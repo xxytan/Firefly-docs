@@ -153,14 +153,25 @@ export default defineConfig({
 如果使用自定义域名，`base` 无需设置。如果仓库名为 `<username>.github.io`，`base` 也无需设置。
 :::
 
-## Cloudflare Pages
+## Cloudflare Workers
+创建`wrangler.jsonc`，填入：
+```json
 
+### 方法一：通过 Cloudflare 仪表盘
+1. 登录[Cloudflare Dashboard](https://dash.cloudflare.com/)
+2. 进入 **Workers & Pages → Create application → Continue with GitHub → Connect to GitHub**
+3. 选择 GitHub 仓库
+4. 配置构建设置：
+   - **Build command**: `pnpm build`
+   - Deploy command
+
+## Cloudflare Pages
 [Cloudflare Pages](https://pages.cloudflare.com/) 提供免费的静态站点托管。
 
-### 方法一：通过 Cloudflare 控制台
+### 方法一：通过 Cloudflare 仪表盘
 
 1. 登录 [Cloudflare Dashboard](https://dash.cloudflare.com/)
-2. 进入 **Workers & Pages → Create → Pages → Connect to Git**
+2. 进入 **Workers & Pages → Create application → Pages → Connect to Git**
 3. 选择 GitHub 仓库
 4. 配置构建设置：
    - **Framework preset**: `Astro`
